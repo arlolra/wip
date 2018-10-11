@@ -1,0 +1,23 @@
+{
+    "name": "WIP",
+    "version": "1.0",
+    "description": "",
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "content_scripts": [{
+        "matches": ["*://208.80.154.224/*"],
+        "run_at": "document_start",
+        "js": ["content-script.js"]
+    }],
+    "permissions": [
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ],
+    "manifest_version": 2
+}
