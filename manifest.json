@@ -2,6 +2,12 @@
     "name": "WIP",
     "version": "1.0",
     "description": "",
+    "manifest_version": 2,
+    "applications": {
+        "gecko": {
+            "id": "addon@wip"
+        }
+    },
     "background": {
         "scripts": [
             "background.js"
@@ -9,15 +15,21 @@
         "persistent": true
     },
     "content_scripts": [{
-        "matches": ["*://208.80.154.224/*"],
+        "matches": [
+            "*://208.80.154.224/*",
+            "*://planet.wikimedia.org/*"
+        ],
         "run_at": "document_start",
         "js": ["content-script.js"]
     }],
     "permissions": [
         "activeTab",
+        "storage",
         "webRequest",
         "webRequestBlocking",
         "<all_urls>"
     ],
-    "manifest_version": 2
+    "options_ui": {
+        "page": "options.html"
+    }
 }
